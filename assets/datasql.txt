@@ -1,0 +1,7 @@
+IMPOSSIBLE pour moi de te faire un export qui va bien, 
+j'ai donc join une capture d'écran de mes tables
+dans assets/
+(le mieux que j'ai pu faire)
+pour te connecter, via login.php : un compte admin admin existe 
+(en principe)
+voilà, déso c'est crado, et merci pour la correction :)

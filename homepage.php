@@ -2,11 +2,6 @@
     session_start();
     require_once 'functions/user-functions.php';
     require_once 'pdo_connexion.php';
-
-    if(!empty($_SESSION['user'])){
-        include 'admin-panel.php';
-    }
-
 ?>
 
 <html>
@@ -14,7 +9,13 @@
     <?php include 'stylesheet.php' ?>
 </head>
 <body>
-<?php include 'nav.php' ?>
+
+<?php 
+    if(!empty($_SESSION['user'])){
+        include 'admin-panel.php';
+    }
+    include 'nav.php' 
+?>
 
     <table class="table">
         <thead>
@@ -24,6 +25,7 @@
                 <th scope="col">author</th>
                 <th scope="col">date</th>
                 <th scope="col">overview</th>
+                <th scope="col">VIEW ARTICLE</th>
             </tr>
         </thead>
         <tbody>

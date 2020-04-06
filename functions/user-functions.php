@@ -1,6 +1,4 @@
 <?php
-// session_start(); 
-//doesn't work -> get a warning : already had a session
 
 function isUserConnected(){
     if($_SESSION['user']){

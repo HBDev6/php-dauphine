@@ -7,3 +7,15 @@ a{
     font-weight: bold;
     text-transform: uppercase;
 }
+.center{
+
+    text-align: center;
+    color: navy;
+}
+.center img{
+    max-height: 50vh;
+}
+.center u{
+    font-weight: bold;
+    text-transform: capitalize;
+}

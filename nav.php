@@ -16,9 +16,6 @@
       <li class="nav-item">
         <a class="nav-link" href="admin.php">Administration</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="logout.php">sign out</a>
-      </li> -->
     </ul>
   </div>
 </nav>
