@@ -8,12 +8,6 @@
         // var_dump($userName);
         $title = $_POST['title'];
 
-        // echo('vardumpost');
-        // var_dump($_POST);
-        // echo('vardumFILE');
-        // var_dump($_FILES);
-        // die();
-
         $content = $_POST['content'];
         
         try{
@@ -27,19 +21,25 @@
                 'author' => $author
             ]);
         } catch (PDOException $exception){
-            var_dump($exception);
-            die();
+            // var_dump($exception);
+            echo($exception);
+            if(($exception->getcode())==='23000'){
+                $errors[] = 'title already used';
+            }
         }
+        return($errors);
     }   
 
     function uploadArticleImage(){
-        var_dump($_FILES);
-        // die();
         $errors=[];
+        $fileName='';
             //test file size
-            if($_FILES['imagepath']['size']===0){
+            
+            if($_FILES['imagepath']['size'] === 0){
                 $errors[]='empty upload';
+                // return $errors;
             }else if($_FILES['imagepath']['size']<=1000000){
+
                 //test authorised extension
                 $allowedExtension = ['jpg', 'jpeg', 'gif','png'];
                 $fileInfo = pathinfo($_FILES['imagepath']['name']);
@@ -56,7 +56,6 @@
                 $errors[]='file too big';
             }
             return ['errors'=>$errors, 'fileName'=>$fileName];
-        }
-
+    }
 
 ?>

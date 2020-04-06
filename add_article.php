@@ -9,7 +9,8 @@
 
     if($_SERVER['REQUEST_METHOD']==='POST'){
         $errorAndLink = uploadArticleImage();
-        if($errorAndLink['fileName']){
+
+        if(!empty($errorAndLink['fileName'])){
             addArticleDB($pdo, $errorAndLink['fileName']);
             header('Location: homepage.php');
         } else {
@@ -20,10 +21,11 @@
 
 <html>
 <head>
-    <?php include 'stylesheet.php' ?>
+    <?php include 'stylesheet.php';?>
 </head>
 <body>
-<?php include 'nav.php' ?>
+<?php include 'admin-panel.php';?>
+<?php include 'nav.php';?>
 <h1>Hey <?php echo($user['pseudo'])?> !</h1>
 
     <h2>you can write your article here</h2>
@@ -33,14 +35,8 @@
     but we'll have to put them later to ensure fewer querries-->
         <label>Title</label>
         <input class="form-control" type="text" placeholder="title" name="title">
-        <!-- <label>Author</label> -->
-        <!-- <input class="form-control" type="text" placeholder="author" name="author"> -->
         <label>Content</label>
         <textarea class="form-control" placeholder="..." name="content"></textarea>
-        <!-- <input type="submit" value="submit"> -->
-    <!-- </form> -->
-    <!-- <h2>you can add a picture here</h2> -->
-    <!-- <form method="POST" enctype="multipart/form-data"> -->
         <label>Picture</label>
         <input class="form-control" type="file" name="imagepath"><br>
         <input type="submit" value="submit">

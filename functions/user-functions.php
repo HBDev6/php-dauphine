@@ -33,7 +33,7 @@ function login($pdo, $login, $password){
     } else {
         $_SESSION['user'] = $res;
     }
-    // var_dump($errors);
+    var_dump($errors);
     return $errors;
 }
 
@@ -51,7 +51,7 @@ function registerUser($pdo, $errors){
         ]);
     } catch (PDOException $exception){
         if(($exception->getcode())==='23000'){
-            $errors[] = 'email already use';
+            $errors[] = 'pseudo and or email already used';
         }
     }
     return $errors;

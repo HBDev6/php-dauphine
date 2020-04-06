@@ -2,8 +2,6 @@
     session_start();
     require_once 'functions/user-functions.php';
     require_once 'pdo_connexion.php';
-    // $user = isUserConnected();
-
     $errors=[];
 
     if($_SERVER['REQUEST_METHOD']==='POST'){
@@ -19,17 +17,15 @@
     <?php include 'stylesheet.php' ?>
 </head>
 <body>
+    <?php include 'nav.php' ?>
 
     <h1>Login</h1>
-
+    <h2>Please log first to access admin features</h2>
     <form method="POST">
         <input type="text" name="login" placeholder="pseudo or email">
         <input type="text" name="password" placeholder="password">
         <input type="submit">
     </form>
-
-    <a class="nav-link" href="homepage.php">Back to Homepage</a>
-
 
 <?php 
     

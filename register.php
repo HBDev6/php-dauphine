@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'functions/user-functions.php';
     require_once 'pdo_connexion.php';
     $errors=[];
@@ -19,6 +20,9 @@
     <?php include 'stylesheet.php' ?>
 </head>
 <body>
+    <?php include 'admin-panel.php';?>
+    <?php include 'nav.php';?>
+
     <h1>Admit new USER as an ADMIN</h1>
 
     <form method="POST" action="register.php">
