@@ -41,7 +41,7 @@
                 <td><?php echo($data['author']); ?></td>
                 <td><?php echo($data['date']); ?></td>
                 <td>
-                    <img style="max-width: 140px;" src="<?php echo('assets/uploads/library/'.$data['imapath']); ?>"
+                    <img style="max-width: 140px;" src="<?php echo('assets/uploads/library/'.$data['imagepath']); ?>"
                     alt="image <?php echo($data['imagepath']); ?>"/>
                 </td>
                 <td>
